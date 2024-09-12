@@ -3,6 +3,7 @@ import { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import GetAdmin from '../Services/GetAdministrator';
+import UpdateSesion from '../Services/UpdateSesion';
 
 function FormLogIn() {
   ////// Carga de los datos///////////////
@@ -28,8 +29,15 @@ function FormLogIn() {
 //////ESTA FUNCION PUEDE CARGAR ,HACER POST O BIEN REALIZAR VALIDACIONES
 const cargar = async () => {  
   ///////////Buscar Usuario////////////////////////////
-  const validUser = dataAdmin.some(usuario=> usuario.email === correo && usuario.password === password )  
-   if (validUser === true) {
+  const validUser = dataAdmin.filter(usuario=> usuario.email === correo && usuario.password === password )
+   if (validUser.length === 1) {
+    const Administrator= {
+        id:validUser[0].id,
+        email:validUser[0].email,
+        password:validUser[0].password,
+        key:"true"
+    }
+    UpdateSesion(Administrator);
     Swal.fire({
       title: 'Has iniciado sesion con exito!',
       text: 'Te redigiremos a la pagina principal',
@@ -38,7 +46,7 @@ const cargar = async () => {
       timer:1500
        });
     setTimeout(() => {
-      navigate('/');
+      navigate('/Administracion');
     }, 2000);
   }else{
     setMensaje("Usuario No encontrado")

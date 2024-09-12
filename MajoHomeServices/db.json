@@ -1,8 +1,11 @@
 {
-  "administrator": [{
-    "email": "mirtha.com",
-    "password": "1234",
-    "key":"false"
-  }],
+  "administrator": [
+    {
+      "id": "kjcbjbf",
+      "email": "mirtha.com",
+      "password": "1234",
+      "key": "False"
+    }
+  ],
   "services": []
 }
