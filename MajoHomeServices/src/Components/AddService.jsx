@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import PostService from '../Services/PostService';
 import GetServices from '../Services/GetService';
 import DeleteService from '../Services/DeleteService';
+import { Link } from 'react-router-dom';
 
 
 ///////Funcion Añade Nuevo Servicio al db.json///////////
@@ -24,6 +25,7 @@ function AddService() {
           reader.onloadend = () => {
             const base64String = reader.result.replace("data:", "").replace(/^.+,/, ""); ///Imagen en base64
             setImg(base64String) ////Seteo Imagen
+            document.getElementById('imagePreview').src = `data:image/jpeg;base64,${base64String}`; // Mostrar vista previa
           };
           reader.readAsDataURL(file);
         }
@@ -63,7 +65,8 @@ const ServiceList = dataServices.map((item) => {
             <h3>{name}</h3>
             <p>{description}</p>
             <img src={image} alt="" width={200} height={200} />
-            <button onClick={() => deleteService (id)} >Eliminar</button> 
+            <button onClick={() => deleteService (id)} >Eliminar</button>
+            <Link to={`/Update/${id}`}>Actualizar</Link>
         </div>
     );
 });
@@ -83,7 +86,8 @@ const ServiceList = dataServices.map((item) => {
         <div>
             <h4>Incluye una imagen de referencia</h4>
             <input type="file" accept='image/*' onChange={convertToBase64}/>
-        </div>
+            {ImgService === "" || ImgService === null ? null : <img id="imagePreview" src={`data:image/jpeg;base64,${ImgService}`} alt="Vista previa de la imagen" />}
+            </div>
         <button onClick={Save}> Guardar</button>
         <div className='contenedorPrimario'>
             <h1>Lista de Servicios</h1>

@@ -18,4 +18,4 @@ async function DeleteService(id) {
     }
 }
 
-export default DeleteService ;
+export default DeleteService;
