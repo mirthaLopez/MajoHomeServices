@@ -27,20 +27,38 @@ function AddService() {
           reader.onloadend = () => {
             const base64String = reader.result.replace("data:", "").replace(/^.+,/, ""); ///Imagen en base64
             setImg(base64String) ////Seteo Imagen
-            document.getElementById('imagePreview').src = `data:image/jpeg;base64,${base64String}`; // Mostrar vista previa
+            document.getElementById('imagePreview').src = `data:img/jpeg;base64,${base64String}`; // Mostrar vista previa
           };
           reader.readAsDataURL(file);
         }
       };
       ////// Funcion Guardar Nuevo Servicio en el db.json///////
     function Save() {
+      const validName=serviceName.trim();
+      const validDescription=serviceDescription.trim();
+      const validImg= ImgService.trim()
+      if (!validName || !validDescription || !validImg) {
+        Swal.fire({
+          icon: "error",
+          title: "Campos Vacios",
+          text: "Debes completar todos los espacios!",
+        });
+      }else{
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Servicio añadido con exito",
+          showConfirmButton: false,
+          timer: 1500
+        });
         const NewService={
-            name: serviceName,
-            description:serviceDescription,
-            img: ImgService
-        }
-        ////Envio al db.json//////
-        PostService(NewService);
+          name: serviceName,
+          description:serviceDescription,
+          img: ImgService
+      }
+      ////Envio al db.json//////
+      PostService(NewService);
+      }   
     }
   ////// LLamado al server, get fecth//////////
   useEffect(() => {
@@ -53,13 +71,13 @@ function AddService() {
     ///////////Funcion elimina tarea////////////////
     const AlertDelete=(id)=>{ 
       Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
+        title: "¿Estas seguro que deseas eliminar este servicio?",
+        text: "La informacion eliminada no se podra recuperar!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
+        confirmButtonText: "Si, eliminalo!"
       }).then((result) => {
         if (result.isConfirmed) {
           const Delete = async (id) => {
@@ -67,8 +85,8 @@ function AddService() {
             setDataServices(prevData => prevData.filter(item => item.id !== id));
           }
           Swal.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
+            title: "Eliminado!",
+            text: "El servicio ha sido eliminado con exito.",
             icon: "success"
           });
           Delete(id)
@@ -117,6 +135,6 @@ const ServiceList = dataServices.map((item) => {
       </div>
     </div>
   )
-}
+} 
 
 export default AddService

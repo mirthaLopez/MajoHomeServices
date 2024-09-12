@@ -1,4 +1,8 @@
 {
-  "users": [],
+  "administrator": [{
+    "email": "mirtha.com",
+    "password": "1234",
+    "key":"false"
+  }],
   "services": []
 }

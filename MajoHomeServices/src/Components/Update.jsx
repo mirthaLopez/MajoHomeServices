@@ -3,7 +3,8 @@ import UpdateService from '../Services/UpdateService';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import GetServicebyId from '../Services/GetServiceById';
-
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 function Update() {
   const {id}=useParams();
@@ -37,7 +38,26 @@ function Update() {
   };
 
   const Save = () => {
-    UpdateService(dataService);
+    const validName=dataService.name.trim();
+    const validDescription=dataService.description.trim();
+    const validImg=dataService.img.trim();
+
+    if (!validName || !validDescription || !validImg) {
+      Swal.fire({
+        icon: "error",
+        title: "Campos Vacios",
+        text: "Debes completar todos los espacios!",
+      });      
+    }else{
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "La edicion fue exitosa",
+        showConfirmButton: false,
+        timer: 1500
+      });
+      UpdateService(dataService);
+    }
   };  
   //////////////////Renderizado//////////////////////////////
   return (
@@ -63,6 +83,7 @@ function Update() {
             {dataService.img === "" || dataService.img === null ? null : <img id="imagePreview" src={`data:image/jpeg;base64,${dataService.img}`} alt="Vista previa de la imagen" width={200} height={200}/>}
         </div>
         <button onClick={Save}>Guardar Cambios</button>
+        <Link to={`/`}><button>Cancelar</button></Link>
     </div>
   )
   }
