@@ -4,6 +4,8 @@ import PostService from '../Services/PostService';
 import GetServices from '../Services/GetService';
 import DeleteService from '../Services/DeleteService';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2'
+
 
 
 ///////Funcion Añade Nuevo Servicio al db.json///////////
@@ -49,9 +51,29 @@ function AddService() {
     fetchServices();
     }, []);
     ///////////Funcion elimina tarea////////////////
-    const deleteService = async (id) => { 
-    await  DeleteService(id);
-    setDataServices(prevData => prevData.filter(item => item.id !== id));
+    const AlertDelete=(id)=>{ 
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const Delete = async (id) => {
+            await  DeleteService(id);
+            setDataServices(prevData => prevData.filter(item => item.id !== id));
+          }
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+          });
+          Delete(id)
+        }
+      });
   };
 
 ////// Recorro la lista de servicios con un map y muestro su contenido en etiquetas//// 
@@ -65,8 +87,8 @@ const ServiceList = dataServices.map((item) => {
             <h3>{name}</h3>
             <p>{description}</p>
             <img src={image} alt="" width={200} height={200} />
-            <button onClick={() => deleteService (id)} >Eliminar</button>
-            <Link to={`/Update/${id}`}>Actualizar</Link>
+            <button onClick={() => AlertDelete (id)} >Eliminar</button>
+            <Link to={`/Update/${id}`}><button>Actualizar</button></Link>
         </div>
     );
 });
@@ -86,7 +108,7 @@ const ServiceList = dataServices.map((item) => {
         <div>
             <h4>Incluye una imagen de referencia</h4>
             <input type="file" accept='image/*' onChange={convertToBase64}/>
-            {ImgService === "" || ImgService === null ? null : <img id="imagePreview" src={`data:image/jpeg;base64,${ImgService}`} alt="Vista previa de la imagen" />}
+            {ImgService === "" || ImgService === null ? null : <img id="imagePreview" src={`data:img/jpeg;base64,${ImgService}`} alt="Vista previa de la imagen" width={200} height={200}/>}
             </div>
         <button onClick={Save}> Guardar</button>
         <div className='contenedorPrimario'>

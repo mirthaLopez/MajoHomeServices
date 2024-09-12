@@ -58,10 +58,11 @@ function Update() {
             required />
         </div>
         <div>
-            <h4>Elige una imagen nueva para tu servicio</h4>
+            <label htmlFor="">Agrega una nueva imagen</label>
             <input type="file" accept='image/*' onChange={convertToBase64}/>
+            {dataService.img === "" || dataService.img === null ? null : <img id="imagePreview" src={`data:image/jpeg;base64,${dataService.img}`} alt="Vista previa de la imagen" width={200} height={200}/>}
         </div>
-        <button onClick={Save}>Actualizar Servicio</button>
+        <button onClick={Save}>Guardar Cambios</button>
     </div>
   )
   }
