@@ -1,0 +1,17 @@
+/* Header.css */
+.custom-navbar {
+    background-color: white !important;
+  }
+  
+  .custom-navbar .navbar-collapse {
+    background-color: white !important;
+    width: 100%;
+  }
+  
+  .custom-navbar .navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos de manera uniforme */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+ }
+  
