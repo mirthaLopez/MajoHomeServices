@@ -1,17 +1,32 @@
 /* Header.css */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
 .custom-navbar {
-    background-color: white !important;
-  }
+    background-color: #fff !important;
+}
   
-  .custom-navbar .navbar-collapse {
-    background-color: white !important;
+.custom-navbar .navbar-collapse {
+    background-color: #fff !important;
     width: 100%;
-  }
+}
   
-  .custom-navbar .navbar-nav {
+.custom-navbar .navbar-nav {
     width: 100%;
     display: flex;
     justify-content: space-between; /* Distribuye los elementos de manera uniforme */
     align-items: center; /* Alinea los elementos verticalmente al centro */
+    padding-right: 90px;
+    padding-left: 90px;
  }
-  
+
+.custom-navlink {
+    font-family: 'DM Serif Display', sans-serif;
+}
+
+.custom-navScroll{
+    font-family: 'DM Serif Display', sans-serif;
+}
+
+.custom-navlink:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}

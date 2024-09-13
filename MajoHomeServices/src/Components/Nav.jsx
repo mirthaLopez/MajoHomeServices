@@ -1,14 +1,12 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import '../Styles/Header.css'
-import logo from '../Img/MHSlogo.png'
+import logo from '../Img/Majologo2.png'
 
-function NavScrollExample() {
+function Header() {
   return (
     <Navbar expand="lg" className="custom-navbar" fixed="top">
       <Container fluid>
@@ -16,8 +14,8 @@ function NavScrollExample() {
         <img
             src={logo}
             alt="Logo"
-            width="130"
-            height="120"
+            width="150"
+            height="130"
             className="d-inline-block align-top"
           />
         </Navbar.Brand>
@@ -28,13 +26,13 @@ function NavScrollExample() {
             style={{ maxHeight: '120px'}}
             navbarScroll
           >
-            <Nav.Link as={Link} to='/Inicio' className="custom-navlink" style={{ fontSize: '20px' }}>Inicio</Nav.Link>
-            <Nav.Link as={Link} to='/Servicios' className="custom-navlink" style={{ fontSize: '20px'}}>Servicios</Nav.Link>
-            <Nav.Link as={Link} to='/About' className="custom-navlink" style={{ fontSize: '20px' }}>Sobre Nosotros</Nav.Link>
-            <Nav.Link as={Link} to='/Contact' className="custom-navlink" style={{ fontSize: '20px'}}>Contacto</Nav.Link>
-            <Nav.Link as={Link} to='/Ubicacion' className="custom-navlink" style={{ fontSize: '20px'}}>Ubicacion</Nav.Link>
-            <NavDropdown title="Otros" id="navbarScrollingDropdown" style={{ fontSize: '20px' }}>
-              <NavDropdown.Item as={Link} to='/Login' className="custom-navlink" style={{ fontSize: '20px'}}>Login</NavDropdown.Item>
+            <Nav.Link as={Link} to='/Inicio' className="custom-navlink" style={{ fontSize: '20px', color: "#258c7c" }} >Inicio</Nav.Link>
+            <Nav.Link as={Link} to='/Servicios' className="custom-navlink" style={{ fontSize: '20px', color: "#258c7c" }}>Servicios</Nav.Link>
+            <Nav.Link as={Link} to='/About' className="custom-navlink" style={{ fontSize: '20px', color: "#258c7c" }}>Sobre Nosotros</Nav.Link>
+            <Nav.Link as={Link} to='/Contact' className="custom-navlink" style={{ fontSize: '20px', color: "#258c7c" }}>Contacto</Nav.Link>
+            <Nav.Link as={Link} to='/Ubicacion' className="custom-navlink" style={{ fontSize: '20px', color: "#258c7c" }}>Ubicacion</Nav.Link>
+            <NavDropdown title="Otros" id="navbarScrollingDropdown" className='custom-navScroll'>
+              <NavDropdown.Item as={Link} to='/Login' className="custom-navlink" style={{ fontSize: '20px', color: "#258c7c" }}>Login</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
@@ -43,4 +41,4 @@ function NavScrollExample() {
   );
 }
 
-export default NavScrollExample;
+export default Header;
