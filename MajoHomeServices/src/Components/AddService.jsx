@@ -32,34 +32,38 @@ function AddService() {
           reader.readAsDataURL(file);
         }
       };
-      ////// Funcion Guardar Nuevo Servicio en el db.json///////
-    function Save() {
-      const validName=serviceName.trim();
-      const validDescription=serviceDescription.trim();
-      const validImg= ImgService.trim()
-      if (!validName || !validDescription || !validImg) {
-        Swal.fire({
-          icon: "error",
-          title: "Campos Vacios",
-          text: "Debes completar todos los espacios!",
-        });
-      }else{
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Servicio añadido con exito",
-          showConfirmButton: false,
-          timer: 1500
-        });
-        const NewService={
-          name: serviceName,
-          description:serviceDescription,
-          img: ImgService
-      }
-      ////Envio al db.json//////
-      PostService(NewService);
-      }   
-    }
+      
+    ////// Funcion Guardar Nuevo Servicio en el db.json///////
+    const Save = async () => {
+    const validName = serviceName.trim();
+    const validDescription = serviceDescription.trim();
+    const validImg = ImgService.trim();
+        
+        if (!validName || !validDescription || !validImg) {
+          Swal.fire({
+            icon: "error",
+            title: "Campos Vacíos",
+            text: "¡Debes completar todos los espacios!",
+          });
+        } else {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Servicio añadido con éxito",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          
+          const NewService = {
+            name: serviceName,
+            description: serviceDescription,
+            img: ImgService,
+          };
+          
+          const NewItem = await PostService(NewService);
+          setDataServices(prevData => [...prevData, NewItem])        }
+      };
+      
   ////// LLamado al server, get fecth//////////
   useEffect(() => {
     const fetchServices = async () => {

@@ -1,12 +1,13 @@
 import React from 'react'
 import UpdateService from '../Services/UpdateService';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import GetServicebyId from '../Services/GetServiceById';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
 function Update() {
+  const Navigate=useNavigate();
   const {id}=useParams();
   const [dataService, setDataServices]= useState({
     id:id,
@@ -37,7 +38,7 @@ function Update() {
     }
   };
 
-  const Save = () => {
+  const Save = async () => {
     const validName=dataService.name.trim();
     const validDescription=dataService.description.trim();
     const validImg=dataService.img.trim();
@@ -49,6 +50,7 @@ function Update() {
         text: "Debes completar todos los espacios!",
       });      
     }else{
+      await UpdateService(dataService);
       Swal.fire({
         position: "center",
         icon: "success",
@@ -56,7 +58,9 @@ function Update() {
         showConfirmButton: false,
         timer: 1500
       });
-      UpdateService(dataService);
+      setTimeout(() => {
+        Navigate('/Administracion')
+      }, 2000);
     }
   };  
   //////////////////Renderizado//////////////////////////////
@@ -83,7 +87,7 @@ function Update() {
             {dataService.img === "" || dataService.img === null ? null : <img id="imagePreview" src={`data:image/jpeg;base64,${dataService.img}`} alt="Vista previa de la imagen" width={200} height={200}/>}
         </div>
         <button onClick={Save}>Guardar Cambios</button>
-        <Link to={`/`}><button>Cancelar</button></Link>
+        <Link to={`/Administracion`}><button>Cancelar</button></Link>
     </div>
   )
   }

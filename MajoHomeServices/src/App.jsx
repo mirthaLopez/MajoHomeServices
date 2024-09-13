@@ -1,13 +1,15 @@
-import Routing from "./Routes/Routing"
-function App() {
+import React from 'react';
+import Routing from "./Routes/Routing";
+import { AuthProvider } from './Components/AuthContext'; // Importa AuthProvider
 
+function App() {
   return (
-    <>
+    <AuthProvider> {/* Envuelve tu aplicación en AuthProvider */}
       <div>
-       < Routing />
+        <Routing />
       </div>
-    </>
-  )
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;

@@ -1,22 +1,12 @@
-import { useNavigate } from "react-router-dom";
-import { useEffect } from 'react';
-import GetAdmin from "../Services/GetAdministrator";
-
-
-
-const ProtectedRoutes=({children}) => {
-  const navigate = useNavigate();
-    useEffect(() => {
-    const fetchKey = async () => {
-    const data = await GetAdmin();    
-     if (data[0].key === 'true') {      
-     }else{
-      return navigate ("/Login")
-     }
-    };
-    fetchKey();
-  }, [])
-  return children; /// si se cumple la condicional return to principal
+import React from 'react';
+import { Navigate } from 'react-router-dom';
+import { useAuth } from '../Components/AuthContext';
+const ProtectedRoutes = ({ children }) => {
+  const { user } = useAuth();
+  if (user) {
+    return children;
+  }
+  return <Navigate to="/Login" />;
 }
 
-export default ProtectedRoutes
+export default ProtectedRoutes;

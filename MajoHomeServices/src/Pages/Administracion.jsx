@@ -1,37 +1,23 @@
-import AddService from "../Components/AddService";
-import UpdateSesion from "../Services/UpdateSesion";
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import GetAdmin from "../Services/GetAdministrator";
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../Components/AuthContext';
+import AddService from '../Components/AddService'
 
 function Administracion() {
-  const [dataAdmin, setDataAdmin]= useState([]);
-  const navigate= useNavigate();
-  ////// LLamado al server, get fecth//////////
-  useEffect(() => {
-    const fetchAdmin = async () => {
-      const data = await GetAdmin();
-      setDataAdmin(data) /// obtengo dato del server mediante el hook
-    };
-    fetchAdmin();
-  }, []);
-  function CerrarSesion() {
-    const Admin = {
-      id:dataAdmin[0].id,
-      email:dataAdmin[0].email,
-      password:dataAdmin[0].password,
-      key:"False"
-    }
-    UpdateSesion(Admin);
+  const navigate = useNavigate();
+  const { logout } = useAuth();
+
+  const CerrarSesion = () => {
+    logout();
     navigate('/Login');
   };
+
   return (
     <div>
-      < AddService />
-      <button onClick={CerrarSesion}>Cerrar Sesion</button>
+      <AddService />
+      <button onClick={CerrarSesion}>Cerrar Sesión</button>
     </div>
-  )
+  );
 }
 
-export default Administracion
+export default Administracion;
