@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 
 .custom-navbar {
-    background-color: #fff !important;
+    background-color: #dfe6cd !important;
 }
   
 .custom-navbar .navbar-collapse {
-    background-color: #fff !important;
+    background-color: #dfe6cd !important;
     width: 100%;
 }
   
@@ -28,5 +28,16 @@
 }
 
 .custom-navlink:hover {
-    text-decoration: underline; /* Subrayado al pasar el ratón */
+    text-decoration: underline; 
 }
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    margin-top: 10px; 
+  }
+  
+
+  
+  

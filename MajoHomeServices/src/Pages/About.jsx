@@ -1,8 +1,11 @@
 import React from 'react'
+import HeaderNav from '../Components/Header'
 
 function About() {
   return (
-    <div>About</div>
+    <div>
+      <HeaderNav />
+    </div>
   )
 }
 export default About

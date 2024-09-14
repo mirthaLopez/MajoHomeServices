@@ -1,9 +1,16 @@
 import React from 'react';
 import FormLogIn from '../Components/FormLogin';
+import HeaderNav from '../Components/Header';
+
 
 function Login() {
   return (
-    <div> <FormLogIn /></div>
+    <div>
+      <HeaderNav />
+      <div style={{marginTop:170}}>
+       <FormLogIn />
+       </div>
+       </div>
   )
 }
 

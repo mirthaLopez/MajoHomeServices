@@ -1,0 +1,89 @@
+.login-container {
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+}
+  
+  .login-left {
+    flex: 1;
+    background-image: url(../Img/Majofoto.jpg);
+    background-size: cover;
+    font-family: 'DM Serif Display', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    min-height: 450px;
+    max-width: 400px;
+  }
+  
+  .login-right {
+    flex: 1;
+    background: #ebe7db;
+    color: #22565F;
+    font-family: 'DM Serif Display', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    max-width: 400px;
+  }
+  
+  .login-form {
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .login-form h1 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .login-form p {
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #eb4f26;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    text-decoration: underline;
+
+  }
+
+@media (max-width: 600px) {
+  .login-left{
+    display: none;
+  }
+  .login-right{
+    padding: 40px;
+  }
+}
+
+  

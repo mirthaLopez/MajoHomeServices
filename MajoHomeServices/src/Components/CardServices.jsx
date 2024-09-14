@@ -2,36 +2,37 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import GetServices from '../Services/GetService';
 import { useState, useEffect } from 'react';
+import '../Styles/CardService.css'
 
 function CardService() {
-  const [dataServices, setDataServices]= useState([]);
-    ////// LLamado al server, get fecth//////////
-    useEffect(() => {
-      const fetchServices = async () => {
-        const data = await GetServices();
-        setDataServices(data) /// obtengo dato del server mediante el hook
-      };
-      fetchServices();
-      }, []);
-    /////Mapeo datos servicios////////
-    const ServiceList = dataServices.map((item) => {
-      const id = item.id;
-      const name = item.name;
-      const description = item.description;
-      const image= `data:image/png;base64,${item.img}`;
-      return (
-        <Card style={{ width: '20rem'}} key={id}>
-        <Card.Img variant="top" src={image} width={200} height={300}/>
-        <Card.Body>
-          <Card.Title>{name}</Card.Title>
-          <Card.Text>{description}</Card.Text>
-          <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      );
-  });
+  const [dataServices, setDataServices] = useState([]);
+  
+  // Llamado al server, get fetch
+  useEffect(() => {
+    const fetchServices = async () => {
+      const data = await GetServices();
+      setDataServices(data); // obtengo dato del server mediante el hook
+      console.log(data);
+    };
+    fetchServices();
+  }, []);
+  
+  // Mapeo datos servicios
+  const ServiceList = dataServices.map(item => (
+    <Card style={{ width: '25rem' }} key={item.id}>
+      <Card.Img variant="top" src={`data:image/png;base64,${item.img}`} width={200} height={300} />
+      <Card.Body>
+        <Card.Title>{item.name}</Card.Title>
+        <Card.Text>{item.description}</Card.Text>
+        <Button variant="primary">Solicitar Servicio</Button>
+      </Card.Body>
+    </Card>
+  ));
+  
   return (
-    <div style={{display:'flex', gap:'4rem'}} className='ContainerService'>{ServiceList}</div>
+    <div className='ContainerService'>
+      {ServiceList}
+    </div>
   );
 }
 

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 import Swal from 'sweetalert2';
 import GetAdmin from '../Services/GetAdministrator'
+import '../Styles/LoginForm.css'
 
 function FormLogIn() {
   const [correo, setUsername] = useState('');
@@ -51,16 +52,22 @@ function FormLogIn() {
 
   return (
     <div className='MainContainer'>
-      <div className='ContainerForm'>
-        <form className='formInicio' onSubmit={validacionEspacios}>
-          <h1>Ingresa a tu Cuenta</h1>
-          <label htmlFor="">Correo</label>
+      <div className='login-container'>
+      <div className='login-left'>
+        <h2>Cuenta Administrativa</h2>
+        <h4>MAJO Home Services</h4>
+      </div>
+      <div className='login-right'>
+        <form className='login-form' onSubmit={validacionEspacios}>
+          <h1>Bienvenido</h1>
+          <p>Inicia sesion en tu cuenta</p>
+          <label htmlFor="correo">Correo *</label>
           <input type="text" id='correo' name='correo' placeholder='Ingrese su correo' value={correo} onChange={cargaUsuario} required />
-          <label htmlFor="">Contraseña</label>
-          <input type="text" id='password' name='password' placeholder='Ingrese su contraseña' value={password} onChange={cargaContraseña} required />
-          <button onClick={cargar}>Ingresar</button>
+          <label htmlFor="password">Contraseña *</label>
+          <input type="password" id='password' name='password' placeholder='Ingrese su contraseña' value={password} onChange={cargaContraseña} required />
+          <button type="submit" onClick={cargar}>Inicia Sesion</button>
         </form>
-        <p>{mensaje}</p>
+      </div>
       </div>
     </div>
   );

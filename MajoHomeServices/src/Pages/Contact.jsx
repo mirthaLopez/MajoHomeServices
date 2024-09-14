@@ -1,8 +1,9 @@
 import React from 'react'
+import HeaderNav from '../Components/Header';
 
 function Contact() {
   return (
-    <div>Contact</div>
+    <div><HeaderNav /></div>
   )
 }
 
