@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 
 .custom-navbar {
-    background-color: #dfe6cd !important;
+    background-color: white !important;
 }
   
 .custom-navbar .navbar-collapse {
-    background-color: #dfe6cd !important;
+    background-color: white !important;
     width: 100%;
 }
   
@@ -36,7 +36,7 @@
     justify-content: center;
     gap: 15px; 
     margin-top: 10px; 
-  }
+}
   
 
   

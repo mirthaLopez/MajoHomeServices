@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import '../Styles/Header.css';
-import logo from '../Img/logo2.png';
+import logo from '../Img/Majologo2.png';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 

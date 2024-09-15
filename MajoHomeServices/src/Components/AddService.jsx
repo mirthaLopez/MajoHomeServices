@@ -4,6 +4,7 @@ import PostService from '../Services/PostService';
 import GetServices from '../Services/GetService';
 import DeleteService from '../Services/DeleteService';
 import { Link } from 'react-router-dom';
+import '../Styles/AddService.css';
 import Swal from 'sweetalert2'
 
 
@@ -100,45 +101,63 @@ function AddService() {
 
 ////// Recorro la lista de servicios con un map y muestro su contenido en etiquetas//// 
 const ServiceList = dataServices.map((item) => {
-    const id = item.id;
-    const name = item.name;
-    const description = item.description;
-    const image= `data:image/png;base64,${item.img}`;
-    return (
-        <div key={id}>
-            <h3>{name}</h3>
-            <p>{description}</p>
-            <img src={image} alt="" width={200} height={200} />
-            <button onClick={() => AlertDelete (id)} >Eliminar</button>
-            <Link to={`/Update/${id}`}><button>Actualizar</button></Link>
-        </div>
-    );
+  const id = item.id;
+  const name = item.name;
+  const description = item.description;
+  const image = `data:image/png;base64,${item.img}`;
+  return (
+    <ServiceCard 
+      key={id} 
+      id={id} 
+      name={name} 
+      description={description} 
+      image={image} 
+      onDelete={AlertDelete} 
+    />
+  );
 });
 
-////////////////Renderizacion ////////////////
+function ServiceCard({ id, name, description, image, onDelete }) {
   return (
-    <div>
-        <h1>Añade un nuevo servicio</h1>
-        <div>
-            <label htmlFor="">Nombre del servicio:</label>
-            <input type="text" id='serviceName' name='serviceName' value={serviceName} onChange={HandleName} required />
+    <div className="service-card">
+      <img src={image} alt={name} className="service-card-image"/>
+      <div className="service-card-content">
+        <h3>{name}</h3>
+        <p>{description}</p>
+        <div className="service-card-buttons">
+          <button onClick={() => onDelete(id)}>Eliminar</button>
+          <Link to={`/Update/${id}`}><button>Actualizar</button></Link>
         </div>
-        <div>
-            <label htmlFor="">Descripcion:</label>
-            <input type="text" id='serviceDescription' name='serviceDescription' value={serviceDescription} onChange={HandleDescription} required />
-        </div>
-        <div>
-            <h4>Incluye una imagen de referencia</h4>
-            <input type="file" accept='image/*' onChange={convertToBase64}/>
-            {ImgService === "" || ImgService === null ? null : <img id="imagePreview" src={`data:img/jpeg;base64,${ImgService}`} alt="Vista previa de la imagen" width={200} height={200}/>}
-            </div>
-        <button onClick={Save}> Guardar</button>
-        <div className='contenedorPrimario'>
-            <h1>Lista de Servicios</h1>
-        <div>{ServiceList}</div>
       </div>
     </div>
-  )
+  );
+}
+////////////////Renderizacion ////////////////
+return(
+<div>
+<div className="form-container">
+  <h1>Añade un nuevo servicio</h1>
+  <div className="form-group">
+    <label htmlFor="serviceName">Nombre del servicio:</label>
+    <input type="text" id="serviceName" name="serviceName" value={serviceName} onChange={HandleName} required />
+  </div>
+  <div className="form-group">
+    <label htmlFor="serviceDescription">Descripción:</label>
+    <input type="text" id="serviceDescription" name="serviceDescription" value={serviceDescription} onChange={HandleDescription} required />
+  </div>
+  <div className="form-group">
+    <h4>Incluye una imagen de referencia</h4>
+    <input type="file" accept="image/*" onChange={convertToBase64} />
+    {ImgService && <img id="imagePreview" src={`data:img/jpeg;base64,${ImgService}`} alt="Vista previa de la imagen" width={200} height={200} />}
+  </div>
+  <button className="btn-save" onClick={Save}>Guardar</button>
+</div>
+<div className='contenedorPrimario'>
+  <h1>Lista de Servicios</h1>
+  <div className="service-list">{ServiceList}</div>
+</div>
+</div>
+);
 } 
 
 export default AddService

@@ -16,8 +16,6 @@ export function AuthProvider({ children }) {
   const logout = () => {
     setUser(null);
   };
-
-
   //////AuthContext.Provider envuelve a los componentes hijos ({children}) y proporciona el valor del contexto, que incluye el estado user y las funciones login y logout.
   return (
     <AuthContext.Provider value={{ user, login, logout }}>  

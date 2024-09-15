@@ -1,24 +1,15 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../Components/AuthContext';
 import AddService from '../Components/AddService'
 import HeaderNav from '../Components/Header';
+import NavAdmin from '../Components/NavAdmin';
 function Administracion() {
-  const navigate = useNavigate();
-  const { logout } = useAuth();
-
-  const CerrarSesion = () => {
-    logout();
-    navigate('/Login');
-  };
-
   return (
     <div>
       <HeaderNav />
       <div style={{marginTop:170}}>
+      <NavAdmin />
       <AddService />
       </div>
-      <button onClick={CerrarSesion}>Cerrar Sesión</button>
     </div>
   );
 }
