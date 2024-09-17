@@ -1,6 +1,6 @@
 .footer {
-    background-image: url(../Img/footer2.jpg);
-    color: #fff;
+    background-color: #e0e7df;
+    color: #1477b8;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
   }
   
   .footer-links a, .footer-social a {
-    color: #fff;
+    color: #1477b8;
     margin: 0 10px;
     text-decoration: none;
   }
@@ -45,14 +45,14 @@
   
   .footer-form button {
     padding: 10px 20px;
-    background-color: #555;
-    color: #fff;
+    background-color:#1477b8;
+    color: white;
     border: none;
     cursor: pointer;
   }
   
   .footer-form button:hover {
-    background-color: #777;
+    background-color: #1477b8;
   }
   
   .footer-credits {

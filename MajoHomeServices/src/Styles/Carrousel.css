@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+.tituloCarrousel{
+    font-family: 'Prata', serif;
+    font-size: 40px;
+}
+
+.carousel-item img {
+    max-height: 600px; 
+    object-fit: cover; 
+    width: 100%;
+}  
+
+.carousel-caption {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(0, -50%);
+    text-align: center;
+    color: white; 
+    background-color: rgba(0, 0, 0, 0.466);
+    padding: 20px;
+  }
+  
+
+.textoCarrousel{
+    font-family: 'Prata', serif;
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+    .tituloCarrousel{
+        font-size: 15px;
+    }
+    
+    .textoCarrousel{
+        font-size: 9px;
+    }
+
+    .carousel-item img {
+        max-height: 600px; 
+    }
+}

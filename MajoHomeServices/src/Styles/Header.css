@@ -1,5 +1,5 @@
 /* Header.css */
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 
 .custom-navbar {
     background-color: white !important;
@@ -20,11 +20,11 @@
  }
 
 .custom-navlink {
-    font-family: 'DM Serif Display', sans-serif;
+    font-family: 'Prata', serif;
 }
 
 .custom-navScroll{
-    font-family: 'DM Serif Display', sans-serif;
+    font-family: 'Prata', serif;
 }
 
 .custom-navlink:hover {
