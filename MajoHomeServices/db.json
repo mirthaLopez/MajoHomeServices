@@ -2,9 +2,17 @@
   "administrator": [
     {
       "id": "kjcbjbf",
+      "name": "Mirtha",
       "email": "mirtha.com",
       "password": "1234",
       "key": "False"
+    },
+    {
+      "id": "3f76",
+      "name": "Mirtha",
+      "email": "gianni.com",
+      "password": "123",
+      "key": "false"
     }
   ],
   "services": [
