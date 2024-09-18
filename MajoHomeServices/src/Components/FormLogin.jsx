@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 import Swal from 'sweetalert2';
-import GetAdmin from '../Services/GetAdministrator'
-import '../Styles/LoginForm.css'
+import GetAdmin from '../Services/GetAdministrator';
+import { useSpring, animated } from '@react-spring/web';
+import '../Styles/LoginForm.css';
 
 function FormLogIn() {
   const [correo, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [mensaje, setMensaje] = useState('');
   const navigate = useNavigate();
   const [dataAdmin, setDataAdmin] = useState([]);
   const { login } = useAuth(); 
@@ -39,7 +39,13 @@ function FormLogIn() {
         navigate('/Administracion');
       }, 2000);
     } else {
-      setMensaje("Usuario No encontrado");
+      Swal.fire({
+        title: 'Usuario no encontrado!',
+        text: 'Revisa tus datos y vueleve a intentarlo',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+        timer: 1500
+      });
       setTimeout(() => {
         setMensaje("");
       }, 1500);
@@ -50,27 +56,30 @@ function FormLogIn() {
     event.preventDefault();
   }
 
+  const animationProps = useSpring({
+    from: { transform: 'scale(0.5)', opacity: 0 },
+    to: { transform: 'scale(1)', opacity: 1 },
+    config: { tension: 200, friction: 12 }
+  });
+
   return (
-    <div className='MainContainer'>
+    <animated.div style={animationProps} className='MainContainer'>
       <div className='login-container'>
-      <div className='login-left'>
-        <h2>Cuenta Administrativa</h2>
-        <h4>MAJO Home Services</h4>
+        <div className='login-left'>
+        </div>
+        <div className='login-right'>
+          <form className='login-form' onSubmit={validacionEspacios}>
+            <h1>Bienvenido</h1>
+            <p>Inicia sesion en tu cuenta</p>
+            <label htmlFor="correo">Correo *</label>
+            <input type="text" id='correo' name='correo' placeholder='Ingrese su correo' value={correo} onChange={cargaUsuario} required />
+            <label htmlFor="password">Contraseña *</label>
+            <input type="password" id='password' name='password' placeholder='Ingrese su contraseña' value={password} onChange={cargaContraseña} required />
+            <button type="submit" onClick={cargar}>Inicia Sesion</button>
+          </form>
+        </div>
       </div>
-      <div className='login-right'>
-        <form className='login-form' onSubmit={validacionEspacios}>
-          <h1>Bienvenido</h1>
-          <p>Inicia sesion en tu cuenta</p>
-          <label htmlFor="correo">Correo *</label>
-          <input type="text" id='correo' name='correo' placeholder='Ingrese su correo' value={correo} onChange={cargaUsuario} required />
-          <label htmlFor="password">Contraseña *</label>
-          <input type="password" id='password' name='password' placeholder='Ingrese su contraseña' value={password} onChange={cargaContraseña} required />
-          <button type="submit" onClick={cargar}>Inicia Sesion</button>
-        </form>
-      </div>
-      </div>
-      <h3>{mensaje}</h3>
-    </div>
+    </animated.div>
   );
 }
 

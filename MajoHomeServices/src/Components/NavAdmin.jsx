@@ -1,11 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../Components/AuthContext';
 import { Link } from 'react-router-dom';
-import '../Styles/NavAdmin.css'
+import '../Styles/NavAdmin.css';
 
 function NavAdmin() {
   const navigate = useNavigate();
+  const location = useLocation();
   const { logout } = useAuth();
 
   const CerrarSesion = () => {
@@ -17,12 +18,23 @@ function NavAdmin() {
     <nav className="nav-admin">
       <h1>Sistema Administración</h1>
       <ul className="nav-links">
-        <li><Link to="/Administracion">Añadir Servicio</Link></li>
-        <li><Link to="/add-admin">Añadir Administrador</Link></li>
-        <li><button onClick={CerrarSesion}>Cerrar Sesión</button></li>
+        <li>
+          <Link to="/Administracion" className={location.pathname === '/Administracion' ? 'active' : ''}>
+            Añadir Servicio
+          </Link>
+        </li>
+        <li>
+          <Link to="/AddAdministrador" className={location.pathname === '/AddAdministrador' ? 'active' : ''}>
+            Añadir Administrador
+          </Link>
+        </li>
+        <li>
+          <button onClick={CerrarSesion}>Cerrar Sesión</button>
+        </li>
       </ul>
     </nav>
   );
 }
 
 export default NavAdmin;
+

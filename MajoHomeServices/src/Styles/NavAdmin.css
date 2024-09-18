@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #258c7c;
+    background-color: #5598c4;
     color: white;
   }
   
@@ -40,6 +40,12 @@
     background-color: #0056b3;
     border-radius: 4px;
   }
+  
+  .nav-links a.active {
+    color: #0056b3;
+    background-color: white;
+  }
+  
   
   @media (max-width: 768px) {
     .nav-admin {

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/Map.css'
-import locationPin from '../Img/location_pin.svg'
+import locationPin from '../Img/pin2.png'
 
 function Map() {
   return (

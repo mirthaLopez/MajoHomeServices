@@ -2,6 +2,7 @@ import '../Styles/Footer.css'
 import React from 'react';
 import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import ContactUs from './EmailJs';
 
 function Footer() {
   return (
@@ -20,12 +21,7 @@ function Footer() {
       </div>
       <div className="footer-form">
         <h2>Contáctanos</h2>
-        <form>
-          <input type="text" placeholder="Name" required />
-          <input type="email" placeholder="Email" required />
-          <textarea placeholder="Message" required></textarea>
-          <button type="submit">Enviar</button>
-        </form>
+        <ContactUs />
       </div>
       </div>
       <div className="footer-credits">

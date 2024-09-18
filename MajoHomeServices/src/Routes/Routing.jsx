@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Update from "../Components/Update";
+import AddAdministrator from "../Components/AddAdministrator";
 import Login from "../Pages/Login";
 import Administracion from "../Pages/Administracion";
 import ProtectedRoutes from "./ProtectedRoutes";
@@ -23,6 +24,7 @@ const Routing = () => {
           <Route path="/Contact" element={<Contact />} /> 
           <Route path="/About" element={<About />} /> 
           <Route path="/Update/:id" element={<ProtectedRoutes><Update /></ProtectedRoutes>} /> 
+          <Route path="/AddAdministrador" element={<ProtectedRoutes><AddAdministrator /></ProtectedRoutes>} /> 
           {/*<Route path="/Home" element={<ProtectedRoutes><Home /></ProtectedRoutes>} />*/}
         </Routes>
        </Router>

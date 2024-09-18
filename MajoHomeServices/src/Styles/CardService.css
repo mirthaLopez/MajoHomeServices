@@ -1,3 +1,25 @@
+.container-presentation {
+  position: relative;
+  display: inline-block;
+}
+
+.imgPresentation {
+  width: 100%; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: auto;
+}
+
+.title {
+  position: absolute;
+  font-family: 'Prata', serif;
+  font-size: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Cambia el color del texto según sea necesario */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor legibilidad */
+  padding: 40px;
+  border-radius: 5px;
+}
 .container-service {
     display: flex;
     flex-wrap: wrap;

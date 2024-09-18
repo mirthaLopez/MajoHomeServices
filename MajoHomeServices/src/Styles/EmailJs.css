@@ -1,0 +1,11 @@
+.btnEnviar{
+    padding: 10px 20px;
+    background-color:#1477b8;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btnEnviar:hover{
+    background-color: #05357c;
+}
