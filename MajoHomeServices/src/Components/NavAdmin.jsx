@@ -29,6 +29,11 @@ function NavAdmin() {
           </Link>
         </li>
         <li>
+          <Link to="/HitorialConsultas" className={location.pathname === '/HitorialConsultas' ? 'active' : ''}>
+          Historial de Consultas
+          </Link>
+        </li>
+        <li>
           <button onClick={CerrarSesion}>Cerrar Sesión</button>
         </li>
       </ul>

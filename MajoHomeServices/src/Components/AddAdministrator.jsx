@@ -29,8 +29,8 @@ function AddAdministrator() {
             text: "¡Debes completar todos los espacios!",
           });
         }else{
-          const existedEmail = dataAdmin.some(usuario => usuario.email === validEmail);
-          if (!existedEmail) {
+          const existedEmail = dataAdmin.find(usuario => usuario.email === validEmail);
+          if (existedEmail === undefined) {
             const NewAdmin={
               name:nombre,
               email:correo,

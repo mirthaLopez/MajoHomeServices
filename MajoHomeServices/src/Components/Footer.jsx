@@ -9,10 +9,10 @@ function Footer() {
     <footer>
         <div className="footer">
       <div className="footer-links">
-        <Link to="/Inicio">Inicio</Link>
+        <Link to="/">Inicio</Link>
         <Link to="/Servicios">Servicios</Link>
         <Link to="/Contact">Contacto</Link>
-        <Link to="/About">Sobre Nosotros</Link>
+        <Link to="/Nosotros">Sobre Nosotros</Link>
       </div>
       <div className="footer-social">
         <a href="https://www.facebook.com/people/Majo-Home-Services/100094669689020/" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>

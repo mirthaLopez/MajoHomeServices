@@ -2,7 +2,7 @@ import React from 'react'
 import HeaderNav from '../Components/Header'
 import Footer from '../Components/Footer'
 
-function About() {
+function Nosotros() {
   return (
     <div>
       <HeaderNav />
@@ -12,4 +12,4 @@ function About() {
     </div>
   )
 }
-export default About
+export default Nosotros

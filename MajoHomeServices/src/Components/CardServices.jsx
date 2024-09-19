@@ -19,8 +19,18 @@ function CardService() {
     fetchServices();
   }, []);
 
-  const ServiceList = dataServices.map(item => (
-    <Card className="service-card" key={item.id}>
+  return (
+    <div>
+      {location.pathname !== '/' && (
+        <div className='container-presentation'>
+          <img src={bathroom} alt="" className='imgPresentation'/>
+          <h1 className='title'>Conozca Nuestros Servicios</h1>
+        </div>
+      )}
+      
+      <div className="container-service">
+      {dataServices.map(item => (
+     <Card className="service-card" key={item.id}>
       <div className="service-card-content">
         <Card.Img variant="left" src={`data:image/png;base64,${item.img}`} className="service-card-img" />
         <Card.Body>
@@ -29,19 +39,7 @@ function CardService() {
           <Button variant="primary">Solicitar Servicio</Button>
         </Card.Body>
       </div>
-    </Card>
-  ));
-
-  return (
-    <div>
-      {location.pathname !== '/Inicio' && (
-        <div className='container-presentation'>
-          <img src={bathroom} alt="" className='imgPresentation'/>
-          <h1 className='title'>Conozca Nuestros Servicios</h1>
-        </div>
-      )}
-      <div className="container-service">
-        {ServiceList}
+     </Card>))}
       </div>
     </div>
   );

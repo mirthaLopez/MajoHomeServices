@@ -1,8 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect} from 'react';
 import emailjs from '@emailjs/browser';
-import Swal from 'sweetalert2';
 import '../Styles/EmailJs.css';
 import PostRequest from '../Services/PostConsultas';
+import { Toaster, toast } from 'sonner'
+import GetRequest from '../Services/GetRequest';
 
 export const ContactUs = () => {
   const form = useRef();
@@ -10,6 +11,7 @@ export const ContactUs = () => {
   const [correo, setEmail] = useState('');
   const [telefono, setPhone] = useState('');
   const [mensaje, setMessage] = useState('');
+  const [dataRequests, setDataRequest] = useState([]);
 
   const cargaNombre = (event) => setName(event.target.value);
   const cargaCorreo = (event) => setEmail(event.target.value);
@@ -17,22 +19,27 @@ export const ContactUs = () => {
   const cargaMensaje = (event) => setMessage(event.target.value);
 
   const Validacion = () => {
+    ///////Espacios vacios///////
     const validName = nombre.trim();
     const validCorreo = correo.trim();
     const validPhone = telefono.trim();
     const validMensaje = mensaje.trim();
-    if (!validName || !validCorreo || !validPhone || !validMensaje) {
-      Swal.fire({
-        icon: "error",
-        title: "Campos Vacíos",
-        text: "¡Debes completar todos los espacios!",
-      });
+    //////Controlar envio de no mas de 3 correos por user////////
+    const validRequest= dataRequests.filter(consulta => consulta.correo=== correo);    
+    if (validName && validCorreo && validPhone && validMensaje) {
+      if (validRequest.length<=3) {
+        return true;     
+      }else{
+        toast.error("Este correo ha enviado muchas consultas, intenta con otro.")
+        return false;
+      }
+    }else{
+      toast.error("Campos vacios! Todos los datos son requeridos")
       return false;
     }
-    return true;
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
     if (!Validacion()) {
@@ -47,28 +54,41 @@ export const ContactUs = () => {
     };
     PostRequest(newRequest);
 
+    const Request = await GetRequest();
+    setDataRequest(prevData => [...prevData, Request]);  
+
     emailjs
       .sendForm('service_9kyglrj', 'template_lgldlxp', form.current, {
         publicKey: 'kdgF6ehsu81GSdJjy',
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          return toast.success ("Tu consulta ha sido enviada!")
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          return toast.error ("Opps! Algo salio mal, intenta nuevamente!")
         },
       );
   };
+  useEffect(() => {
+    const fetchRequest = async () => {
+      const data = await GetRequest();
+      setDataRequest(data);
+    };
+    fetchRequest();
+  }, []);
 
   return (
+    <div>
     <form ref={form} onSubmit={sendEmail}>
-      <input type="text" name="from_name" placeholder='Nombre' required value={nombre} onChange={cargaNombre} />
-      <input type="email" name="from_email" placeholder='Email' required value={correo} onChange={cargaCorreo} />
+      <input type="text" name="from_name" placeholder='Nombre' value={nombre} onChange={cargaNombre} />
+      <input type="email" name="from_email" placeholder='Email' value={correo} onChange={cargaCorreo} />
       <input type="text" name="phone" placeholder='Telefono' value={telefono} onChange={cargaTelefono} />
       <textarea name="message" placeholder='Mensaje' value={mensaje} onChange={cargaMensaje} />
       <input type="submit" value="Send" className='btnEnviar' />
     </form>
+    <Toaster richColors />
+    </div>
   );
 };
 

@@ -25,7 +25,7 @@ function FormLogIn() {
   }, []);
 
   const cargar = async () => {
-    const validUser = dataAdmin.some(usuario => usuario.email === correo && usuario.password === password);
+    const validUser = dataAdmin.find(usuario => usuario.email === correo && usuario.password === password);
     if (validUser) {
       Swal.fire({
         title: 'Has iniciado sesión con éxito!',
