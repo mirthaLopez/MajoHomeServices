@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom';
 import '../Styles/AddService.css';
 import Swal from 'sweetalert2'
 
-
-
 ///////Funcion Añade Nuevo Servicio al db.json///////////
 function AddService() {
     //////Declaracion de variables/////////////
@@ -62,7 +60,8 @@ function AddService() {
           };
           
           const NewItem = await PostService(NewService);
-          setDataServices(prevData => [...prevData, NewItem])        }
+          setDataServices(prevData => [...prevData, NewItem])        
+        }
       };
       
   ////// LLamado al server, get fecth//////////
