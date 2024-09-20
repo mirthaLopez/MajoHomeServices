@@ -1,11 +1,41 @@
-.btnEnviar{
+/* EmailJs.css */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-input, .form-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .form-input:focus, .form-textarea:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .btn-enviar {
     padding: 10px 20px;
-    background-color:#1477b8;
-    color: white;
+    background-color: #007bff;
+    color: #fff;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
-}
-
-.btnEnviar:hover{
-    background-color: #05357c;
-}
+    font-size: 16px;
+  }
+  
+  .btn-enviar:hover {
+    background-color: #0056b3;
+  }
+  
+  

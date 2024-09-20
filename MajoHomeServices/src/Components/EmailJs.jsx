@@ -80,15 +80,16 @@ export const ContactUs = () => {
 
   return (
     <div>
-    <form ref={form} onSubmit={sendEmail}>
-      <input type="text" name="from_name" placeholder='Nombre' value={nombre} onChange={cargaNombre} />
-      <input type="email" name="from_email" placeholder='Email' value={correo} onChange={cargaCorreo} />
-      <input type="text" name="phone" placeholder='Telefono' value={telefono} onChange={cargaTelefono} />
-      <textarea name="message" placeholder='Mensaje' value={mensaje} onChange={cargaMensaje} />
-      <input type="submit" value="Send" className='btnEnviar' />
+    <form ref={form} onSubmit={sendEmail} className="contact-form">
+    <h3>Contactanos</h3>
+      <input type="text" name="from_name" placeholder="Nombre" value={nombre} onChange={cargaNombre} className="form-input" />
+      <input type="email" name="from_email" placeholder="Email" value={correo} onChange={cargaCorreo} className="form-input" />
+      <input type="text" name="phone" placeholder="Teléfono" value={telefono} onChange={cargaTelefono} className="form-input" />
+      <textarea name="message" placeholder="Mensaje" value={mensaje} onChange={cargaMensaje} className="form-textarea" />
+      <input type="submit" value="Enviar" className="btn-enviar" />
     </form>
-    <Toaster richColors />
-    </div>
+    <Toaster richColors position="bottom-left"/>
+  </div>
   );
 };
 

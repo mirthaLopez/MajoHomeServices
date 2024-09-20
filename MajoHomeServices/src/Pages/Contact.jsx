@@ -1,12 +1,20 @@
 import React from 'react'
 import HeaderNav from '../Components/Header';
 import Footer from '../Components/Footer';
+import Map from '../Components/Map';
+import ContactUs from '../Components/EmailJs';
+import '../Styles/Contact.css'
 
 function Contact() {
   return (
-    <div><HeaderNav />
-    <div style={{height:'600px'}}></div>
-    <Footer /></div>
+    <div>
+    <HeaderNav />
+    <div className='container-map-contact'>
+    <ContactUs />
+    < Map />
+    </div>
+    <Footer />
+    </div>
   )
 }
 

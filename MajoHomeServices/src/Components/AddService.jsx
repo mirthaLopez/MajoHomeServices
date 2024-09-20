@@ -60,7 +60,7 @@ function AddService() {
           };
           
           const NewItem = await PostService(NewService);
-          setDataServices(prevData => [...prevData, NewItem])        
+          setDataServices(prevData => [...prevData, NewItem]);       
         }
       };
       
@@ -72,7 +72,7 @@ function AddService() {
     };
     fetchServices();
     }, []);
-    ///////////Funcion elimina tarea////////////////
+    ///////////Funcion elimina servicio////////////////
     const AlertDelete=(id)=>{ 
       Swal.fire({
         title: "¿Estas seguro que deseas eliminar este servicio?",
@@ -93,7 +93,7 @@ function AddService() {
             text: "El servicio ha sido eliminado con exito.",
             icon: "success"
           });
-          Delete(id)
+          Delete(id);
         }
       });
   };

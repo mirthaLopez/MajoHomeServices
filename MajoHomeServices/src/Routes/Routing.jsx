@@ -6,7 +6,6 @@ import Login from "../Pages/Login";
 import Administracion from "../Pages/Administracion";
 import ProtectedRoutes from "./ProtectedRoutes";
 import Servicios from "../Pages/Servicios";
-import Ubicacion from "../Pages/Ubicacion";
 import Contact from "../Pages/Contact";
 import Inicio from "../Pages/Inicio";
 import HitorialConsultas from "../Pages/HitorialConsultas";
@@ -20,7 +19,6 @@ const Routing = () => {
           <Route path="/Administracion" element={<ProtectedRoutes><Administracion /></ProtectedRoutes>} /> 
           <Route path="/Login" element={<Login />} /> 
           <Route path="/Servicios" element={<Servicios />} /> 
-          <Route path="/Ubicacion" element={<Ubicacion />} /> 
           <Route path="/Contact" element={<Contact />} /> 
           <Route path="/Nosotros" element={<Nosotros />} /> 
           <Route path="/Update/:id" element={<ProtectedRoutes><Update /></ProtectedRoutes>} /> 

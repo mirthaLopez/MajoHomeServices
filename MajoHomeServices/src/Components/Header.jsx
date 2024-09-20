@@ -32,7 +32,6 @@ function HeaderNav() {
             <Nav.Link as={Link} to='/Servicios' className="custom-navlink" style={{ fontSize: '20px', color: "#1477b8", fontWeight:'800'}}>Servicios</Nav.Link>
             <Nav.Link as={Link} to='/Nosotros' className="custom-navlink" style={{ fontSize: '20px', color: "#1477b8", fontWeight:'800' }}>Sobre Nosotros</Nav.Link>
             <Nav.Link as={Link} to='/Contact' className="custom-navlink" style={{ fontSize: '20px', color: "#1477b8", fontWeight:'800' }}>Contacto</Nav.Link>
-            <Nav.Link as={Link} to='/Ubicacion' className="custom-navlink" style={{ fontSize: '20px', color: "#1477b8", fontWeight:'800'}}>Ubicacion</Nav.Link>
             {location.pathname !== '/Administracion' && <NavDropdown title="Otros" id="navbarScrollingDropdown" className='custom-navScroll'>
             <NavDropdown.Item as={Link} to='/Login' className="custom-navlink" style={{ fontSize: '20px', color: "#1477b8",fontWeight:'800'}}>Login</NavDropdown.Item>
             </NavDropdown>}
