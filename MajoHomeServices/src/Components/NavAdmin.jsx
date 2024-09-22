@@ -11,7 +11,7 @@ function NavAdmin() {
 
   const CerrarSesion = () => {
     logout();
-    navigate('/Login');
+    navigate('/');
   };
 
   return (

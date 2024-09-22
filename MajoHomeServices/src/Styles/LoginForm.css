@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 
-
 .login-container {
     padding: 40px;
     display: flex;
     justify-content: center;
 }
-  
-  .login-left {
+
+.login-left {
     flex: 1;
     background-image: url(../Img/LogIn.jpg);
     background-size: cover;
@@ -20,9 +19,9 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     min-height: 480px;
     max-width: 470px;
-  }
-  
-  .login-right {
+}
+
+.login-right {
     flex: 1;
     font-family: 'Prata', serif;
     background-color: #A3E3EB;
@@ -32,61 +31,61 @@
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     max-width: 400px;
-  }
-  
-  .login-form {
+}
+
+.login-form {
     width: 80%;
     max-width: 400px;
     text-align: center;
-  }
-  
-  .login-form h1 {
+}
+
+.login-form h1 {
     margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .login-form p {
+    color: #1477b8; 
+}
+
+.login-form p {
     margin-bottom: 20px;
     color: #666;
-  }
-  
-  .login-form label {
+}
+
+.login-form label {
     display: block;
     margin-bottom: 5px;
     color: #555;
-  }
-  
-  .login-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .login-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #E15338;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .login-form button:hover {
-    text-decoration: underline;
-
-  }
-
-@media (max-width: 600px) {
-  .login-left{
-    display: none;
-  }
-  .login-right{
-    padding: 40px;
-  }
 }
 
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form button {
+    background-color: #1477b8; 
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+}
+
+.login-form button:hover {
+    background-color: #f39c12; 
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .login-left {
+      display: none; 
+  }
+
+  .login-right {
+      max-width: 100%; 
+      padding: 20px;
+  }
+}
   

@@ -7,6 +7,7 @@ function Nosotros() {
   return (
     <div>
       <HeaderNav />
+      <div style={{height:'140px'}}></div>
       <AboutUs />
       <Footer />
     </div>

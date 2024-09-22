@@ -4,6 +4,7 @@ import Footer from '../Components/Footer'
 import ControlledCarousel from '../Components/Carrousel';
 import Bienvenida from '../Components/Bienvenida';
 import CardService from '../Components/CardServices';
+import AboutUs from '../Components/AboutUs';
 function Inicio() {
   return (
     <div>
@@ -12,6 +13,7 @@ function Inicio() {
       <ControlledCarousel />
       <Bienvenida />
       <CardService />
+      <AboutUs />
       <Footer />
     </div>
   )

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import '../Styles/Carrousel.css'
-import fotoCarrousel1 from '../Img/imagen.jpeg'
-import fotoCarrousel3 from '../Img/carrousel3.jpg'
-import fotoCarrousel2 from '../Img/Equipo.jpeg'
+import '../Styles/Carrousel.css';
+import fotoCarrousel1 from '../Img/imagen.jpeg';
+import fotoCarrousel3 from '../Img/carrousel3.jpg';
+import fotoCarrousel2 from '../Img/Equipo.jpeg';
 
 function ControlledCarousel() {
   const [index, setIndex] = useState(0);
@@ -13,11 +13,11 @@ function ControlledCarousel() {
   };
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
+    <Carousel activeIndex={index} onSelect={handleSelect} interval={2000}>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={fotoCarrousel1}
+          src={fotoCarrousel2}
           alt="First slide"
         />
         <Carousel.Caption>
@@ -28,7 +28,7 @@ function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={fotoCarrousel2}
+          src={fotoCarrousel1}
           alt="Second slide"
         />
         <Carousel.Caption>
@@ -43,7 +43,7 @@ function ControlledCarousel() {
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h3 className='tituloCarrousel'>Relajate y disfruta de tu hogar siempre limpio...</h3> 
+          <h3 className='tituloCarrousel'>Relájate y disfruta de tu hogar siempre limpio...</h3> 
           <p className='textoCarrousel'>Confía en nosotros para mantener tu espacio limpio y ordenado, permitiéndote disfrutar de tu tiempo libre sin preocupaciones.</p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -52,3 +52,4 @@ function ControlledCarousel() {
 }
 
 export default ControlledCarousel;
+

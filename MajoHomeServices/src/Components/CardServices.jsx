@@ -29,22 +29,21 @@ function CardService() {
       )}
       
       <div className="container-service">
-      {dataServices.map(item => (
-     <Card className="service-card" key={item.id}>
-      <div className="service-card-content">
-        <Card.Img variant="left" src={`data:image/png;base64,${item.img}`} className="service-card-img" />
-        <Card.Body>
-          <Card.Title>{item.name}</Card.Title>
-          <Card.Text>{item.description}</Card.Text>
-          <Button variant="primary">Solicitar Servicio</Button>
-        </Card.Body>
-      </div>
-     </Card>))}
+        {dataServices.map(item => (
+          <Card className="service-card" key={item.id}>
+            <div className="service-card-content">
+              <Card.Img variant="left" src={`data:image/png;base64,${item.img}`} className="service-card-img" />
+              <Card.Body className="service-card-body">
+                <Card.Title className="service-card-title">{item.name}</Card.Title>
+                <Card.Text className="service-card-text">{item.description}</Card.Text>
+                <Button className="service-card-button">Solicitar Servicio</Button>
+              </Card.Body>
+            </div>
+          </Card>
+        ))}
       </div>
     </div>
   );
 }
 
 export default CardService;
-
-

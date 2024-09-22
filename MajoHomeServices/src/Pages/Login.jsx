@@ -8,7 +8,7 @@ function Login() {
   return (
     <div>
       <HeaderNav />
-      <div style={{marginTop:170}}>
+      <div style={{marginTop:120}}>
        <FormLogIn />
        </div>
       <Footer />

@@ -41,14 +41,11 @@ function FormLogIn() {
     } else {
       Swal.fire({
         title: 'Usuario no encontrado!',
-        text: 'Revisa tus datos y vueleve a intentarlo',
+        text: 'Revisa tus datos y vuelve a intentarlo',
         icon: 'error',
         confirmButtonText: 'Ok',
         timer: 1500
       });
-      setTimeout(() => {
-        setMensaje("");
-      }, 1500);
     }
   };
 
@@ -70,12 +67,12 @@ function FormLogIn() {
         <div className='login-right'>
           <form className='login-form' onSubmit={validacionEspacios}>
             <h1>Bienvenido</h1>
-            <p>Inicia sesion en tu cuenta</p>
+            <p>Inicia sesión en tu cuenta</p>
             <label htmlFor="correo">Correo *</label>
             <input type="text" id='correo' name='correo' placeholder='Ingrese su correo' value={correo} onChange={cargaUsuario} required />
             <label htmlFor="password">Contraseña *</label>
             <input type="password" id='password' name='password' placeholder='Ingrese su contraseña' value={password} onChange={cargaContraseña} required />
-            <button type="submit" onClick={cargar}>Inicia Sesion</button>
+            <button type="submit" onClick={cargar}>Inicia Sesión</button>
           </form>
         </div>
       </div>
@@ -84,3 +81,4 @@ function FormLogIn() {
 }
 
 export default FormLogIn;
+

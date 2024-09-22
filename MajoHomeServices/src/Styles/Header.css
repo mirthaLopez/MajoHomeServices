@@ -1,42 +1,75 @@
-/* Header.css */
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 
 .custom-navbar {
     background-color: white !important;
 }
-  
+
 .custom-navbar .navbar-collapse {
     background-color: white !important;
     width: 100%;
 }
-  
+
 .custom-navbar .navbar-nav {
     width: 100%;
     display: flex;
-    justify-content: space-between; /* Distribuye los elementos de manera uniforme */
-    align-items: center; /* Alinea los elementos verticalmente al centro */
+    justify-content: space-between;
+    align-items: center;
     padding-right: 90px;
     padding-left: 90px;
- }
+}
 
 .custom-navlink {
     font-family: 'Prata', serif;
-}
-
-.custom-navScroll{
-    font-family: 'Prata', serif;
+    position: relative;
+    transition: color 0.3s ease;
+    color: #1477b8; /* Color de texto azul */
 }
 
 .custom-navlink:hover {
-    text-decoration: underline; 
+    color: #f39c12; /* Tono amarillo/naranja */
 }
 
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px; 
-    margin-top: 10px; 
+.custom-navlink::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #f39c12; /* Tono amarillo/naranja */
+    transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
 }
+
+.custom-navlink:hover::after {
+    width: 100%;
+    left: 0;
+    background: #f39c12; /* Tono amarillo/naranja */
+}
+
+.custom-navlink.active {
+    color: #f39c12; /* Tono amarillo/naranja */
+    font-weight: bold;
+}
+
+.custom-navlink.active::after {
+    width: 100%;
+    left: 0;
+    background: #f39c12; /* Tono amarillo/naranja */
+}
+
+.social-icons a {
+    color: #1477b8; /* Color de texto azul */
+    font-size: 20px; /* Aumenta el tamaño de los iconos */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #f39c12; /* Tono amarillo/naranja */
+    transform: scale(1.2); /* Aumenta el tamaño al hacer hover */
+}
+
   
 
   

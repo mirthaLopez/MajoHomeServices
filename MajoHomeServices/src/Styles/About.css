@@ -1,0 +1,65 @@
+.about-us-container {
+    padding: 20px;
+    font-family: 'Prata', serif;
+}
+
+.etiqueta-h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #092034; /* Color del título */
+}
+
+.team-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    border-left: 5px solid #28B2E6; /* Borde izquierdo azul */
+}
+
+.team-photo {
+    border-radius: 50%;
+    width: 200px; /* Tamaño más grande */
+    height: 200px; /* Tamaño más grande */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #28B2E6; /* Borde de la foto azul */
+}
+
+.team-info {
+    text-align: center;
+}
+
+.team-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #28B2E6; /* Color del nombre */
+}
+
+.team-info h3 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #28B2E6; /* Color del título */
+}
+
+.team-info p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+
+  
