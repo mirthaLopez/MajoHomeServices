@@ -1,7 +1,6 @@
 import React from 'react';
 import Routing from "./Routes/Routing";
 import { AuthProvider } from './Components/AuthContext'; // Importa AuthProvider
-import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (

@@ -21,7 +21,7 @@
   }
 
   .etiqueta-h3{
-    color: #2F3737;
+    color: #1477b8;
     font-weight: 400;
   }
 
@@ -30,6 +30,7 @@
       flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
       align-items: center; /* Alinear al centro */
       padding: 2rem; /* Menos padding en móviles */
+      margin-top: 140px;
     }
   
     .container-map {

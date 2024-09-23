@@ -4,7 +4,7 @@
     flex-direction: column;
     width: 80%;
     min-width: 400px;
-    background: #c9e4d9;
+    background-color: #A3E3EB;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -25,9 +25,9 @@
   }
   
   .btn-enviar {
-    background-color: #f39c12;
+    background-color: #1477b8; 
   color: #ecf0f1;
-  border: 2px solid #f39c12;
+  border: 2px solid #1477b8;
   border-radius: 25px;
   padding: 10px 20px;
   cursor: pointer;
@@ -55,7 +55,7 @@
   }
 
   .btn-enviar:hover {
-    background-color: #e67e22;
+    background-color: #0638a3;
     transform: scale(1.05);
   }
 

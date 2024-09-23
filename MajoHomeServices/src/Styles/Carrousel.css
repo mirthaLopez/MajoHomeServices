@@ -22,6 +22,10 @@
     font-family: 'Prata', serif;
     font-size: 15px;
 }
+.tituloCarrousel {
+    font-size: 30px;
+    font-family: 'Prata', serif;
+}
 
 @media (max-width: 600px) {
     .tituloCarrousel {

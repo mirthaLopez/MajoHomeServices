@@ -21,7 +21,7 @@ function CardService() {
     service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     service.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
-////////////////////////////////////////////////////////////////    
+///////////////////////LLamado al server//////////////////////////////////    
   useEffect(() => {
     const fetchServices = async () => {
       const data = await GetServices();
@@ -44,9 +44,9 @@ function CardService() {
               value={searchTerm}
               onChange={handleSearchChange}
               className="search-input"
-            /> <br /> <br /> <br />
+            /> <br /> <br /> {/* Si el termino de busquedad arroja resultados, entonces hace esta renderizacion */}
             {searchTerm && filteredServices.length > 0 ? (
-              <div className="contenedor-busqueda">
+              <div className="contenedor-busqueda" style={{minHeight:'500px'}}>
                 {filteredServices.map((item, index) => (
                   <Card className="new-service-card" key={item.id}>
                     <div className={`new-service-card-content ${index % 2 === 0 ? 'align-left' : 'align-right'}`}>
@@ -61,7 +61,7 @@ function CardService() {
                 ))}
               </div>
             ) : (
-              <div className="services-grid">
+              <div className="services-grid">   {/* muestra todos los elementos de la lista */}
                 {dataServices.map((item, index) => (
                   <Card className="new-service-card" key={item.id}>
                     <div className={`new-service-card-content ${index % 2 === 0 ? 'align-left' : 'align-right'}`}>

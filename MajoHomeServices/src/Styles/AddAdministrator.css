@@ -1,30 +1,31 @@
 .admin-container {
   background-color: #f9f9f9;
   font-family: 'Arial', sans-serif;
+  padding: 1rem; /* Agregando padding */
 }
 
 .tag-h1 {
-  font-family: 'Arial Black', Gadget, sans-serif; /* Fuente llamativa */
-  font-size: 2rem; /* Tamaño grande */
-  color: #5598c4; /* Color vibrante */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra de texto */
-  background: linear-gradient(to right, #5598c4, #0766a5); /* Degradado de fondo */
-  background-clip: text; /* Propiedad estándar */
-  -webkit-background-clip: text; /* Propiedad con prefijo para compatibilidad */
-  -webkit-text-fill-color: transparent; /* Texto transparente para mostrar el degradado */
-  text-align: center; /* Centrado */
-  margin: 1.5rem; /* Espacio inferior */
-  padding: 0.5rem; /* Relleno */
-  border-radius: 10px; /* Bordes redondeados */
-  border: 2px solid #5598c4; /* Borde */
+  font-family: 'Arial Black', Gadget, sans-serif; 
+  font-size: 2rem; 
+  color: #5598c4; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+  background: linear-gradient(to right, #5598c4, #0766a5); 
+  background-clip: text; 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  text-align: center; 
+  margin: 1.5rem; 
+  padding: 0.5rem; 
+  border-radius: 10px; 
+  border: 2px solid #5598c4; 
 }
 
 .form-and-list {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
-  flex-wrap: wrap;
-  padding-right: 2.5rem; /* Permite que los elementos se envuelvan */
+  flex-wrap: wrap; /* Permite que se envuelvan */
+  padding: 0 1rem; /* Espaciado lateral */
 }
 
 .form-container-admin,
@@ -33,12 +34,9 @@
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  max-width: 45%; /* Ancho máximo para ambos contenedores */
-  flex: 1; /* Flex para que ocupen el espacio disponible */
-  margin-right: 1rem; /* Espacio entre los contenedores */
-  min-width: 300px; /* Ancho mínimo para pantallas pequeñas */
-  min-height: 600px; /* Mismo tamaño */
-  margin-bottom: 40px;
+  flex: 1 1 300px; /* Flexibilidad y ancho mínimo */
+  margin: 1rem; /* Espacio uniforme */
+  min-height: 600px; /* Tamaño mínimo */
 }
 
 .form-group {
@@ -75,6 +73,7 @@ input:focus {
   transition: background-color 0.3s;
   font-size: 1rem;
   margin-top: 1rem;
+  width: 100%; /* Botón de ancho completo */
 }
 
 .button:hover {
@@ -105,19 +104,16 @@ input:focus {
   background-color: #c9302c;
 }
 
-/* Responsividad */
+/* Media Queries para Responsividad */
 @media (max-width: 768px) {
   .form-and-list {
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column; /* Cambia a columna en pantallas más pequeñas */
   }
-
+  
   .form-container-admin,
   .admin-list {
-    max-width: 100%;
-    margin-right: 0; 
-    margin-bottom: 2rem; 
+    max-width: 100%; /* Ancho completo en pantallas pequeñas */
+    margin-right: 0; /* Elimina el margen derecho */
+    min-height: fit-content;
   }
 }
-
-

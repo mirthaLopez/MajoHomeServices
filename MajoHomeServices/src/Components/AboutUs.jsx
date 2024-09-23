@@ -5,8 +5,11 @@ import '../Styles/About.css';
 
 function AboutUs() {
   return (
+    // Contenedor principal del componente AboutUs
     <div className="about-us-container">
+      {/* Muestra el título solo si la ruta no es la página principal */}
       {location.pathname !== '/' && <h1 className='etiqueta-h1'>Somos MAJO Home Services</h1>}
+      {/* Muestra la sección de misión y visión solo si la ruta no es la página principal */}
       {location.pathname !== '/' && <div className="mission-vision-section">
         <div className="mission">
           <h2>Misión</h2>
@@ -21,8 +24,10 @@ function AboutUs() {
           </p>
         </div>
       </div>}
+      {/* Sección del equipo */}
       <div className="team-section">
         <div className="team-member">
+          {/* Imagen de MAJO */}
           <img src={MAJO} alt="MAJO" className="team-photo" />
           <div className="team-info">
             <h2>María José Ordóñez</h2>
@@ -32,7 +37,9 @@ function AboutUs() {
             </p>
           </div>
         </div>
+        {/* Muestra la información de Yorleny solo si la ruta no es la página principal */}
         {location.pathname !== '/' && <div className="team-member">
+          {/* Imagen de Yorleny */}
           <img src={Colaboradora} alt="Colaboradora" className="team-photo" />
           <div className="team-info">
             <h2>Yorleny</h2>
@@ -47,7 +54,9 @@ function AboutUs() {
   );
 }
 
+// Exporta el componente AboutUs para que pueda ser utilizado en otras partes de la aplicación
 export default AboutUs;
+
 
 
 

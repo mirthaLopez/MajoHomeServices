@@ -16,7 +16,7 @@ import Reviews from "../Pages/Reviews";
 const Routing = () => {
     return (
         <Router>
-            <ScrollToTop /> {/* Añade el componente aquí */}
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<Inicio />} /> 
                 <Route path="/Administracion" element={<ProtectedRoutes><Administracion /></ProtectedRoutes>} /> 
