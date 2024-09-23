@@ -3,39 +3,42 @@
   font-family: 'Arial', sans-serif;
 }
 
-h1 {
-  text-align: center;
-  color: #092034;
-  margin-bottom: 1.5rem;
+.tag-h1 {
+  font-family: 'Arial Black', Gadget, sans-serif; /* Fuente llamativa */
+  font-size: 2rem; /* Tamaño grande */
+  color: #5598c4; /* Color vibrante */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra de texto */
+  background: linear-gradient(to right, #5598c4, #0766a5); /* Degradado de fondo */
+  background-clip: text; /* Propiedad estándar */
+  -webkit-background-clip: text; /* Propiedad con prefijo para compatibilidad */
+  -webkit-text-fill-color: transparent; /* Texto transparente para mostrar el degradado */
+  text-align: center; /* Centrado */
+  margin: 1.5rem; /* Espacio inferior */
+  padding: 0.5rem; /* Relleno */
+  border-radius: 10px; /* Bordes redondeados */
+  border: 2px solid #5598c4; /* Borde */
 }
 
 .form-and-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 2rem;
   flex-wrap: wrap;
   padding-right: 2.5rem; /* Permite que los elementos se envuelvan */
 }
 
-.form-container {
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  max-width: 45%; /* Ancho máximo para el formulario */
-  flex: 1; /* Flex para que ocupe el espacio disponible */
-  margin-right: 1rem; /* Espacio entre el formulario y la lista */
-  min-width: 300px; /* Ancho mínimo para pantallas pequeñas */
-}
-
+.form-container-admin,
 .admin-list {
-  background: #ffffff;
+  background-color: #dddcdc;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  max-width: 45%; /* Ancho máximo para la lista */
-  flex: 1; /* Flex para que ocupe el espacio disponible */
+  max-width: 45%; /* Ancho máximo para ambos contenedores */
+  flex: 1; /* Flex para que ocupen el espacio disponible */
+  margin-right: 1rem; /* Espacio entre los contenedores */
   min-width: 300px; /* Ancho mínimo para pantallas pequeñas */
+  min-height: 600px; /* Mismo tamaño */
+  margin-bottom: 40px;
 }
 
 .form-group {
@@ -109,11 +112,12 @@ input:focus {
     align-items: center; 
   }
 
-  .form-container,
+  .form-container-admin,
   .admin-list {
     max-width: 100%;
     margin-right: 0; 
     margin-bottom: 2rem; 
   }
 }
+
 

@@ -46,6 +46,11 @@ function NavAdmin() {
           </Link>
         </li>
         <li>
+          <Link to="/Reviews" className={location.pathname === '/Reviews' ? 'active' : ''}>
+            Añadir Reseña
+          </Link>
+        </li>
+        <li>
           <button onClick={CerrarSesion} className="logout-button">Cerrar Sesión</button>
         </li>
       </ul>

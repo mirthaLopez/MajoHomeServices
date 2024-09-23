@@ -2,13 +2,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 90%;
     max-width: 100%;
     margin: auto;
     position: relative;
-    background-image: url(../Img/review.jpg);
+    background-color: #f0f8ff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    margin-bottom: 40px;
 }
 
 .carousel-reviews-button {
@@ -36,4 +37,25 @@
     font-weight: bold;
     color: #333;
     margin-top: 10px;
+}
+
+.review::before,
+.review::after {
+    content: '“';
+    font-size: 3rem;
+    color: #333;
+}
+
+.review::after {
+    content: '”';
+    right: 0;
+}
+
+.title-reviews {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1477b8;
+    letter-spacing: 1px;
+    font-family: 'Prata', serif;
 }

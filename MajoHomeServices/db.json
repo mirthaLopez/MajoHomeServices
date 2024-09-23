@@ -13,6 +13,23 @@
       "password": "1234"
     }
   ],
+  "reviews": [
+    {
+      "id": "573f",
+      "name": "Susana Gomez",
+      "review": "El servicio de limpieza fue excepcional. El equipo llegó a tiempo, fue muy profesional y dejó mi casa impecable. Cada rincón estaba reluciente y el ambiente se sentía fresco y limpio. Definitivamente los recomendaré a mis amigos y familiares."
+    },
+    {
+      "id": "c6fe",
+      "name": "Angie Ortega",
+      "review": "Estoy muy impresionado con la calidad del servicio de limpieza. Los profesionales fueron muy detallistas y no dejaron ninguna área sin atender. Mi oficina nunca había estado tan ordenada y limpia. Sin duda, los volveré a contratar para futuras limpiezas."
+    },
+    {
+      "id": "0df1",
+      "name": "Evans Porras",
+      "review": "La experiencia con esta empresa de limpieza fue maravillosa. Desde la atención al cliente hasta la limpieza final, todo fue perfecto. El equipo fue muy amable y eficiente, y mi hogar quedó como nuevo. Superaron todas mis expectativas."
+    }
+  ],
   "consultas": [
     {
       "id": "1298",

@@ -1,0 +1,73 @@
+
+.container-add-review{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap; /* Añadido para responsividad */
+    gap: 2rem;
+}
+
+.form-section, .reviews-section {
+    width: 45%;
+    background-color: #f0f8ff; /* Fondo claro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+label {
+    color: #555;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-save {
+    background-color: #007bff; /* Verde */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button-save:hover {
+    background-color: #0056b3;
+}
+
+.review-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f0f8ff; /* Fondo claro */
+    border-radius: 4px;
+}
+
+.delete-button {
+    background-color: #f44336; /* Rojo */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .form-section, .reviews-section {
+        width: 100%;
+    }
+}

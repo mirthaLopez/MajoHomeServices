@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 
-.tituloCarrousel {
-    font-family: 'Prata', serif;
-    font-size: 40px;
-}
-
 .carousel-item img {
     height: 500px; 
     object-fit: cover; 
@@ -25,7 +20,7 @@
 
 .textoCarrousel {
     font-family: 'Prata', serif;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 @media (max-width: 600px) {

@@ -102,9 +102,9 @@ function AddAdministrator() {
     return (
       <div className="admin-container">
           <NavAdmin />
-          <h1>Añade un nuevo administrador</h1>
+          <h1 className='tag-h1'>Añade un nuevo administrador</h1>
           <div className="form-and-list">
-              <div className="form-container">
+              <div className="form-container-admin">
                   <div className="form-group">
                       <label htmlFor="nombre">Nombre</label>
                       <input type="text" id="nombre" name="nombre" placeholder="Nombre" value={nombre} onChange={cargaNombre} required />

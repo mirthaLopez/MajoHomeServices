@@ -1,38 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import '../Styles/CarrouselReviews.css'; // Asegúrate de crear este archivo CSS para los estilos
-
-const reviews = [
-    { name: 'Juan Pérez', review: 'Excelente servicio, muy recomendable.' },
-    { name: 'María López', review: 'Una experiencia maravillosa, volveré sin duda.' },
-    { name: 'Carlos García', review: 'Profesionalismo y calidad en cada detalle.' }
-];
+import '../Styles/CarrouselReviews.css';
+import GetReviews from '../Services/GetReviews';
 
 const CarouselReviews = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [dataReview, setDataReview] = useState([]);
 
+    useEffect(() => {
+        const fetchReview = async () => {
+            const data = await GetReviews();
+            setDataReview(data);
+        };
+        fetchReview();
+    }, []);
+    
     const nextSlide = () => {
-        setCurrentIndex((currentIndex + 1) % reviews.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((currentIndex - 1 + reviews.length) % reviews.length);
+        setCurrentIndex((currentIndex + 1) % dataReview.length);
     };
 
     useEffect(() => {
-        const interval = setInterval(nextSlide, 4000); // Cambia cada 3 segundos
-        return () => clearInterval(interval); // Limpia el intervalo al desmontar el componente
-    }, [currentIndex]);
+        if (dataReview.length > 0) {
+            const interval = setInterval(nextSlide, 7000); // Cambia cada 4 segundos
+            return () => clearInterval(interval); // Limpia el intervalo al desmontar el componente
+        }
+    }, [currentIndex, dataReview]);
 
     return (
-        <div className="carousel-reviews">
-            <button className="carousel-reviews-button" onClick={prevSlide}>‹</button>
-            <div className="carousel-reviews-slide">
-                <p className="review">{reviews[currentIndex].review}</p>
-                <p className="name">- {reviews[currentIndex].name}</p>
+        <div>              
+            <h1 className='title-reviews'>Testimonios de nuestros clientes</h1>
+            <div className="carousel-reviews">
+                <div className="carousel-reviews-slide">
+                    <p className="review">{dataReview[currentIndex]?.review}</p>
+                    <p className="name">- {dataReview[currentIndex]?.name}</p>
+                </div>
             </div>
-            <button className="carousel-reviews-button" onClick={nextSlide}>›</button>
         </div>
     );
 };
 
 export default CarouselReviews;
+
+
+

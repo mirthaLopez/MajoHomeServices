@@ -134,8 +134,8 @@ function ServiceCard({ id, name, description, image, onDelete }) {
 ////////////////Renderizacion ////////////////
 return(
 <div>
+<h1 className='tag-h1'>Añade un nuevo servicio</h1>
 <div className="form-container">
-  <h1>Añade un nuevo servicio</h1>
   <div className="form-group">
     <label htmlFor="serviceName">Nombre del servicio:</label>
     <input type="text" id="serviceName" name="serviceName" value={serviceName} onChange={HandleName} required />
@@ -152,7 +152,7 @@ return(
   <button className="btn-save" onClick={Save}>Guardar</button>
 </div>
 <div className='contenedorPrimario'>
-  <h1>Lista de Servicios</h1>
+  <h1 className='tag-h1'>Lista de Servicios</h1>
   <div className="service-list">{ServiceList}</div>
 </div>
 </div>

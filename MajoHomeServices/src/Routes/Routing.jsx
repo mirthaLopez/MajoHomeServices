@@ -11,6 +11,7 @@ import Inicio from "../Pages/Inicio";
 import HitorialConsultas from "../Pages/HitorialConsultas";
 import Nosotros from "../Pages/Nosotros";
 import ScrollToTop from "../Components/ScrollToTop";
+import Reviews from "../Pages/Reviews";
 
 const Routing = () => {
     return (
@@ -26,6 +27,7 @@ const Routing = () => {
                 <Route path="/Update/:id" element={<ProtectedRoutes><Update /></ProtectedRoutes>} /> 
                 <Route path="/AddAdministrador" element={<ProtectedRoutes><AddAdministrator /></ProtectedRoutes>} /> 
                 <Route path="/HitorialConsultas" element={<ProtectedRoutes><HitorialConsultas /></ProtectedRoutes>} /> 
+                <Route path="/Reviews" element={<ProtectedRoutes><Reviews /></ProtectedRoutes>} /> 
             </Routes>
         </Router>
     );

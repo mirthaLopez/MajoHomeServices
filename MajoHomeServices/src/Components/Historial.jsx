@@ -42,7 +42,7 @@ function Historial() {
 
   return (
     <div className='container-history'>
-      <h1>Historial de Consultas</h1>
+      <h1 className='tag-h1'>Historial de Consultas</h1>
       <div className='container-table'>
         <table>
           <thead>
