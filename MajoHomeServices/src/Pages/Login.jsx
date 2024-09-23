@@ -6,13 +6,11 @@ import Footer from '../Components/Footer';
 
 function Login() {
   return (
-    <div>
+    <div style={{ marginTop: '120px' }}>
       <HeaderNav />
-      <div style={{marginTop:120}}>
-       <FormLogIn />
-       </div>
+      <FormLogIn />
       <Footer />
-       </div>
+    </div>
   )
 }
 

@@ -3,8 +3,7 @@
 .bienvenida-container {
   padding: 50px;
   min-height: 300px;
-  font-family: 'Arial', sans-serif;
-  background-color: #f9f9f9;
+  font-family: 'Prata', serif;
   border-radius: 10px;
   text-align: center;
   padding-bottom: 20px;
@@ -15,7 +14,7 @@
   font-size: 2.5em;
   margin-bottom: 20px;
   color: #1477b8; /* Color de texto azul */
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .bienvenida-container h3 {
@@ -42,7 +41,7 @@
 
 .bienvenida-container li::before {
   content: '✔';
-  color: #1b7459;
+  color: #0f3fc2;
   position: absolute;
   left: 0;
   top: 0;

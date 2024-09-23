@@ -22,7 +22,7 @@ function ControlledCarousel() {
         />
         <Carousel.Caption>
           <h3 className='tituloCarrousel'>Servicio de Limpieza Profesional</h3> 
-          <p className='textoCarrousel'>En Majo Home Services, brindamos servicios de limpieza profesionales, confiables y adaptados a tus necesidades. Nuestra prioridad es tu satisfacción y un ambiente impecable</p>
+          <p className='textoCarrousel'>En Majo Home Services, brindamos servicios de limpieza profesionales, confiables y adaptados a tus necesidades. Nuestra prioridad es tu satisfacción y un ambiente impecable.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>

@@ -97,6 +97,35 @@ footer {
   background-size: contain;
 }
 
+/* Media Queries for Small Screens */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-info {
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer-social {
+    margin-top: 20px;
+  }
+
+  .footer-social a {
+    font-size: 20px;
+    margin: 0 5px;
+  }
+
+  .footer-logo img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+
 
 
   

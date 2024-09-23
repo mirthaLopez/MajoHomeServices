@@ -13,8 +13,7 @@ function Bienvenida() {
           <li><strong>Flexibilidad:</strong> Nos adaptamos a tus horarios y necesidades.</li>
           <li><strong>Ecológico:</strong> Nos preocupamos por el medio ambiente y tu salud, evitando alergias, irritaciones y problemas respiratorios.</li>
         </ul>
-      </div> <br /> <br />
-      <h1>Conozca Nuestros Servicios...</h1>
+      </div>
     </div>
   );
 }

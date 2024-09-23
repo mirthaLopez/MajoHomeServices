@@ -17,9 +17,11 @@ function Footer() {
           <img src={logo} alt="logo" height={100} width={120} />
         </div>
         <div className="footer-info">
-          <h5>Somos MAJO Home Services</h5>
-          <p>Correo: mariajoseordonezlopez16@gmail.com</p>
+          <h5>MAJO Home Services</h5>
+          <p>Correo:majohomeservices@gmail.com</p>
           <p>Teléfono: +50664783403</p>
+          <p>Nosara, Guanacaste</p>
+          <br />
           <Link to='/Contact'><button>Contáctanos</button></Link>
         </div>
       </div>

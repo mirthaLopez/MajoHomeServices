@@ -1,75 +1,119 @@
-/* AddAdministrator.css */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.admin-container {
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #092034;
+  margin-bottom: 1.5rem;
+}
+
+.form-and-list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  padding-right: 2.5rem; /* Permite que los elementos se envuelvan */
+}
+
+.form-container {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 45%; /* Ancho máximo para el formulario */
+  flex: 1; /* Flex para que ocupe el espacio disponible */
+  margin-right: 1rem; /* Espacio entre el formulario y la lista */
+  min-width: 300px; /* Ancho mínimo para pantallas pequeñas */
+}
+
+.admin-list {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 45%; /* Ancho máximo para la lista */
+  flex: 1; /* Flex para que ocupe el espacio disponible */
+  min-width: 300px; /* Ancho mínimo para pantallas pequeñas */
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.admin-item {
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-button {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #c9302c;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .form-and-list {
+    flex-direction: column; 
+    align-items: center; 
   }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
-  
+
+  .form-container,
   .admin-list {
-    margin-top: 20px;
+    max-width: 100%;
+    margin-right: 0; 
+    margin-bottom: 2rem; 
   }
-  
-  .admin-item {
-    background-color: white;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .admin-item p {
-    margin: 0;
-  }
-  
-  .admin-item button {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .admin-item button:hover {
-    background-color: #c82333;
-  }
-  
+}
+

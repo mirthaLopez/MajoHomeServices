@@ -5,14 +5,12 @@ import Footer from '../Components/Footer'
 import '../Styles/Servicios.css'
 function Servicios() {
   return (
-    <div>
+    <div style={{ marginTop: '160px' }}>
       <HeaderNav />
-      <div className='Container-Card'>
       <CardService />
-      </div>
       <Footer />
     </div>
   )
 }
 
-export default Servicios
+export default Servicios;

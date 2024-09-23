@@ -7,7 +7,7 @@ import '../Styles/Contact.css'
 
 function Contact() {
   return (
-    <div>
+    <div style={{ marginTop: '90px' }}>
     <HeaderNav />
     <div className='container-map-contact'>
     <ContactUs />

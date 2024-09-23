@@ -74,7 +74,6 @@
 }
 
 .login-form button:hover {
-    background-color: #f39c12; 
     transform: scale(1.05);
 }
 

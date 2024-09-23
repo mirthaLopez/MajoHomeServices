@@ -1,0 +1,39 @@
+.carousel-reviews {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    position: relative;
+    background-image: url(../Img/review.jpg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.carousel-reviews-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+    padding: 0 20px;
+}
+
+.carousel-reviews-slide {
+    text-align: center;
+    padding: 20px;
+}
+
+.review {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #555;
+}
+
+.name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}

@@ -5,17 +5,20 @@ import ControlledCarousel from '../Components/Carrousel';
 import Bienvenida from '../Components/Bienvenida';
 import CardService from '../Components/CardServices';
 import AboutUs from '../Components/AboutUs';
+import CarouselReviews from '../Components/CarrouselReviews';
 function Inicio() {
   return (
+    <div style={{ marginTop: '160px' }}>
+    <Header />
+    <ControlledCarousel />
+    <Bienvenida />
     <div>
-      <Header />
-      <div style={{height:'120px'}}></div>
-      <ControlledCarousel />
-      <Bienvenida />
-      <CardService />
-      <AboutUs />
-      <Footer />
+    <CardService />
     </div>
+    <AboutUs />
+    <CarouselReviews />
+    <Footer />
+  </div>
   )
 }
 

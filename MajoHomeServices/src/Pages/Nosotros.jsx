@@ -5,9 +5,8 @@ import AboutUs from '../Components/AboutUs'
 
 function Nosotros() {
   return (
-    <div>
+    <div style={{ marginTop: '140px' }}>
       <HeaderNav />
-      <div style={{height:'140px'}}></div>
       <AboutUs />
       <Footer />
     </div>
